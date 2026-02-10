@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광일푸드 | 대한민국 육수의 기준, 왕도매 멸치</title>
+    <meta name="description" content="HACCP 인증 식자재용 1.5kg 국내산 국물멸치. 마트 대비 압도적 가격, 산지 직송 신선함. 국산 식자재 최저가 해썹업체.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+        body{font-family:'Noto Sans KR',sans-serif;line-height:1.75;color:#222;background:#FAFAF8;overflow-x:hidden}
+        html,body{max-width:100vw;width:100%}
+        section,div,article,main,header,footer{max-width:100%}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit}
+        ul,ol{list-style:none}
+
+        :root{
+            --navy:#0A1628;
+            --navy-mid:#152238;
+            --navy-light:#1E3050;
+            --gold:#D4A838;
+            --gold-light:#E8C96A;
+            --gold-dark:#A68520;
+            --gold-muted:rgba(212,168,56,.10);
+            --cream:#FAFAF8;
+            --cream-mid:#F3F0E8;
+            --warm:#EDE8DA;
+            --white:#FFFFFF;
+            --text:#2A2A2A;
+            --text-sub:#555;
+            --text-muted:#888;
+            --border:rgba(0,0,0,.06);
+            --font-serif:'Noto Serif KR',serif;
+            --font-sans:'Noto Sans KR',sans-serif;
+            --radius:14px;
+            --shadow:0 2px 16px rgba(10,22,40,.05);
+            --shadow-md:0 6px 28px rgba(10,22,40,.07);
+            --shadow-lg:0 14px 44px rgba(10,22,40,.09);
+        }
+
+        /* ── 레이아웃 ── */
+        .container{width:100%;max-width:1080px;margin:0 auto;padding:0 36px}
+        @media(max-width:768px){.container{padding:0 20px}}
+
+        /* ── 스크롤 프로그레스 ── */
+        .scroll-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));z-index:10001;width:0;transition:width .12s linear}
+
+        /* ══════════════════════════════════
+           헤더
+        ══════════════════════════════════ */
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 0;background:rgba(250,250,248,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .35s ease,box-shadow .35s ease,background .35s ease}
+        .header.scrolled{padding:6px 0;box-shadow:0 2px 24px rgba(0,0,0,.06);background:rgba(250,250,248,.95)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between}
+        .logo-link{display:flex;align-items:center;gap:6px;transition:opacity .2s ease}
+        .logo-link:hover{opacity:.85}
+        .logo-link img{height:46px;width:auto;transition:height .35s ease}
+        .header.scrolled .logo-link img{height:38px}
+        .header-right{display:flex;align-items:center;gap:12px}
+        .header-badge{display:none;align-items:center;gap:5px;padding:5px 13px;background:var(--gold-muted);border:1px solid rgba(212,168,56,.18);border-radius:20px;font-size:.7rem;font-weight:600;color:var(--gold-dark);letter-spacing:.2px}
+        @media(min-width:640px){.header-badge{display:inline-flex}}
+        .header-cta{padding:10px 22px;background:var(--navy);border:none;color:var(--white);font-size:.8rem;font-weight:600;border-radius:6px;cursor:pointer;transition:all .25s ease;font-family:var(--font-sans);display:inline-flex;align-items:center;gap:7px}
+        .header-cta:hover{background:var(--navy-mid);box-shadow:0 4px 14px rgba(10,22,40,.18);transform:translateY(-1px)}
+
+        /* ══════════════════════════════════
+           히어로 — P(Problem)
+        ══════════════════════════════════ */
+        .hero{padding:140px 0 90px;background:linear-gradient(175deg,var(--cream) 0%,var(--cream-mid) 50%,var(--warm) 100%);position:relative;overflow:hidden}
+        .hero::after{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:120%;background:radial-gradient(ellipse,rgba(212,168,56,.05) 0%,transparent 70%);pointer-events:none}
+        .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+        .hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;background:var(--gold-muted);border:1px solid rgba(212,168,56,.2);border-radius:4px;font-size:.74rem;font-weight:600;color:var(--gold-dark);margin-bottom:20px;letter-spacing:.3px}
+        .hero-title{font-family:var(--font-serif);font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700;line-height:1.42;color:var(--navy);margin-bottom:18px;letter-spacing:-.02em}
+        .hero-title .hl{color:var(--gold-dark)}
+        .hero-desc{font-size:.96rem;color:var(--text-sub);margin-bottom:10px;line-height:1.95}
+        .hero-desc strong{color:var(--gold-dark);font-weight:600}
+        .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(212,168,56,.07);border-radius:6px;font-size:.84rem;color:var(--gold-dark);margin-bottom:28px;font-weight:500}
+        .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;font-size:.9rem;font-weight:600;border-radius:6px;cursor:pointer;transition:all .25s ease;border:none;font-family:var(--font-sans)}
+        .btn-navy{background:var(--navy);color:var(--white)}
+        .btn-navy:hover{background:var(--navy-mid);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+        .btn-outline{background:transparent;color:var(--navy);border:1.5px solid rgba(10,22,40,.22)}
+        .btn-outline:hover{border-color:var(--navy);background:rgba(10,22,40,.03)}
+        .hero-note{font-size:.76rem;color:var(--text-muted);margin-top:12px;display:flex;align-items:center;gap:6px}
+        .hero-note i{color:var(--gold)}
+
+        /* 히어로 카드 */
+        .hero-card{background:var(--white);border-radius:18px;padding:30px;border:1px solid var(--border);box-shadow:var(--shadow-lg);position:relative}
+        .hero-card-logo{width:100%;max-width:200px;margin:0 auto 22px;opacity:.88}
+        .hc-badge{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;color:var(--gold-dark);font-weight:600;padding:5px 12px;background:var(--gold-muted);border-radius:4px;margin-bottom:14px}
+        .hc-name{font-family:var(--font-serif);font-size:1.04rem;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.4}
+        .hc-sub{font-size:.82rem;color:var(--text-muted);margin-bottom:18px}
+        .hc-specs{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+        .hc-spec{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--text-sub)}
+        .hc-spec i{color:var(--gold);font-size:.72rem;width:14px;text-align:center}
+        .hc-divider{height:1px;background:var(--cream-mid);margin:0;border:none}
+        .hc-price{padding-top:18px}
+        .hc-price-old{font-size:.82rem;color:var(--text-muted);text-decoration:line-through}
+        .hc-price-now{font-family:var(--font-serif);font-size:2.1rem;font-weight:700;color:var(--navy);margin-top:2px}
+        .hc-price-now span{font-size:.86rem;font-weight:400;color:var(--text-muted)}
+        .hc-price-note{font-size:.7rem;color:var(--gold-dark);margin-top:5px}
+        .hc-haccp{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:7px 16px;background:rgba(10,22,40,.03);border-radius:6px;font-size:.72rem;font-weight:600;color:var(--navy)}
+        .hc-haccp i{color:var(--gold)}
+
+        @media(max-width:960px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-cta-row{justify-content:center}.hero-tag{justify-content:center}.hero-note{justify-content:center}}
+        @media(max-width:768px){.hero{padding:120px 0 56px}.btn{width:100%;padding:13px 22px}.hero-cta-row{flex-direction:column}}
+
+        /* ══════════════════════════════════
+           가격 앵커링 — P→A 전환
+        ══════════════════════════════════ */
+        .anchor{background:var(--white);padding:90px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .anchor-inner{max-width:840px;margin:0 auto}
+        .anchor-top{text-align:center;margin-bottom:44px}
+        .anchor-top h2{font-family:var(--font-serif);font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:700;color:var(--navy);margin-bottom:14px;line-height:1.48}
+        .anchor-top h2 .hl{color:var(--gold-dark)}
+        .anchor-top p{font-size:.91rem;color:var(--text-muted);line-height:1.9}
+        .cmp{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-bottom:36px}
+        .cmp-box{background:var(--cream);border-radius:var(--radius);padding:32px 28px;text-align:center;border:2px solid transparent;transition:all .3s ease}
+        .cmp-box.ours{border-color:var(--gold);position:relative}
+        .cmp-box.ours::before{content:'왕도매가';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--white);padding:4px 18px;border-radius:20px;font-size:.7rem;font-weight:700;white-space:nowrap}
+        .cmp-label{font-size:.8rem;color:var(--text-muted);margin-bottom:14px;font-weight:500}
+        .cmp-items{margin-bottom:18px;text-align:left;padding:0 4px}
+        .cmp-item{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--text-muted)}
+        .cmp-item:last-child{border-bottom:none}
+        .cmp-item span:last-child{font-weight:600;color:var(--navy)}
+        .cmp-total{padding-top:18px;border-top:2px solid var(--cream-mid)}
+        .cmp-total-label{font-size:.72rem;color:var(--text-muted);margin-bottom:3px}
+        .cmp-total-value{font-family:var(--font-serif);font-size:1.9rem;font-weight:700;color:var(--navy)}
+        .cmp-box.ours .cmp-total-value{color:var(--gold-dark)}
+        .cmp-total-value span{font-size:.82rem;font-weight:400}
+        .cmp-note{font-size:.7rem;color:var(--gold-dark);margin-top:6px}
+        .cmp-arrow{font-size:1.4rem;color:var(--gold)}
+        .anchor-bottom{background:var(--navy);border-radius:var(--radius);padding:28px 36px;text-align:center}
+        .anchor-bottom-badge{display:inline-block;background:var(--gold);color:var(--white);padding:5px 18px;border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:12px}
+        .anchor-bottom p{font-size:.94rem;color:rgba(255,255,255,.86);line-height:1.85}
+        .anchor-bottom strong{color:var(--gold-light);font-weight:700}
+        @media(max-width:768px){.cmp{grid-template-columns:1fr;gap:12px}.cmp-arrow{transform:rotate(90deg)}}
+
+        /* ══════════════════════════════════
+           공감 — A(Affinity)
+        ══════════════════════════════════ */
+        .empathy{background:var(--cream-mid);padding:90px 0}
+        .empathy-box{max-width:720px;margin:0 auto;background:var(--white);border-radius:var(--radius);padding:40px 40px 40px 44px;border-left:4px solid var(--gold);box-shadow:var(--shadow)}
+        .empathy-box h3{font-family:var(--font-serif);font-size:1.08rem;font-weight:700;color:var(--navy);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+        .empathy-box h3 i{color:var(--gold)}
+        .emp-list{display:flex;flex-direction:column;gap:16px}
+        .emp-item{display:flex;align-items:flex-start;gap:13px;font-size:.9rem;color:var(--text-sub);line-height:1.8}
+        .emp-item i{color:var(--gold);margin-top:6px;font-size:.68rem;flex-shrink:0}
+        @media(max-width:768px){.empathy-box{padding:28px 20px 28px 24px}}
+
+        /* ══════════════════════════════════
+           공통 섹션
+        ══════════════════════════════════ */
+        .sec{padding:96px 0;position:relative}
+        .sec-white{background:var(--white)}
+        .sec-cream{background:var(--cream)}
+        .sec-warm{background:var(--cream-mid)}
+        .sec-dark{background:var(--navy)}
+        .sec-hd{text-align:center;margin-bottom:54px}
+        .sec-tag{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;background:var(--gold-muted);border:1px solid rgba(212,168,56,.18);border-radius:4px;font-size:.7rem;font-weight:600;color:var(--gold-dark);letter-spacing:.4px;text-transform:uppercase;margin-bottom:14px}
+        .sec-dark .sec-tag{background:rgba(212,168,56,.12);color:var(--gold-light);border-color:rgba(212,168,56,.2)}
+        .sec-title{font-family:var(--font-serif);font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:700;line-height:1.45;margin-bottom:14px;color:var(--navy);letter-spacing:-.01em}
+        .sec-title .hl{color:var(--gold-dark)}
+        .sec-dark .sec-title{color:var(--white)}
+        .sec-dark .sec-title .hl{color:var(--gold-light)}
+        .sec-desc{font-size:.91rem;color:var(--text-muted);max-width:520px;margin:0 auto;line-height:1.8}
+        .sec-dark .sec-desc{color:rgba(255,255,255,.6)}
+
+        /* ══════════════════════════════════
+           상품 — S(Solution)
+        ══════════════════════════════════ */
+        .prod-main{background:var(--white);border-radius:18px;padding:44px;border:2px solid var(--gold);box-shadow:var(--shadow-lg);max-width:680px;margin:0 auto;position:relative}
+        .prod-badge{position:absolute;top:-13px;left:28px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--white);padding:6px 20px;border-radius:4px;font-size:.73rem;font-weight:700;box-shadow:0 3px 10px rgba(212,168,56,.25)}
+        .prod-top{margin-bottom:24px}
+        .prod-cat{font-size:.76rem;color:var(--gold-dark);font-weight:600;margin-bottom:5px;letter-spacing:.3px}
+        .prod-name{font-family:var(--font-serif);font-size:1.18rem;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.4}
+        .prod-sub{font-size:.83rem;color:var(--text-muted)}
+        .prod-specs{margin-bottom:24px}
+        .prod-spec{display:flex;align-items:center;gap:11px;font-size:.87rem;color:var(--text-sub);padding:11px 0;border-bottom:1px solid var(--cream-mid)}
+        .prod-spec:last-child{border-bottom:none}
+        .prod-spec i{color:var(--gold);font-size:.78rem;width:18px;text-align:center;flex-shrink:0}
+        .prod-spec strong{color:var(--navy);font-weight:600}
+        .prod-price{text-align:center;padding-top:24px;border-top:2px solid var(--cream-mid)}
+        .prod-price-old{font-size:.85rem;color:var(--text-muted);text-decoration:line-through}
+        .prod-price-now{font-family:var(--font-serif);font-size:2.5rem;font-weight:700;color:var(--navy)}
+        .prod-price-now span{font-size:.95rem;font-weight:400;color:var(--text-muted)}
+        .prod-price-note{font-size:.73rem;color:var(--gold-dark);margin-top:6px}
+        .prod-haccp{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;padding:9px 0;font-size:.78rem;font-weight:600;color:var(--navy)}
+        .prod-haccp i{color:var(--gold)}
+        @media(max-width:768px){.prod-main{padding:30px 22px}}
+
+        /* USP */
+        .usp-wrap{background:var(--white);border-radius:18px;padding:44px;margin-top:48px;border:1px solid var(--border);box-shadow:var(--shadow);max-width:840px;margin-left:auto;margin-right:auto}
+        .usp-title{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:40px}
+        .usp-title .hl{color:var(--gold-dark)}
+        .usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+        .usp-card{text-align:center;padding:20px 16px}
+        .usp-icon{width:56px;height:56px;background:var(--gold-muted);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem;color:var(--gold-dark);transition:all .3s ease}
+        .usp-card:hover .usp-icon{background:var(--gold);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 14px rgba(212,168,56,.28)}
+        .usp-card h4{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:9px}
+        .usp-card p{font-size:.82rem;color:var(--text-muted);line-height:1.75}
+        .usp-card .at{color:var(--gold-dark);font-weight:600}
+        @media(max-width:768px){.usp-grid{grid-template-columns:1fr}.usp-wrap{padding:28px 20px}}
+
+        /* ══════════════════════════════════
+           숫자로 보는 광일푸드 — 카운터
+        ══════════════════════════════════ */
+        .stats{background:var(--cream-mid);padding:72px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+        .stat-item{padding:24px 12px}
+        .stat-num{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:6px}
+        .stat-num .stat-unit{font-size:.6em;font-weight:400;color:var(--gold-dark)}
+        .stat-label{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+        @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:480px){.stats-grid{grid-template-columns:1fr}}
+
+        /* ══════════════════════════════════
+           신뢰 — O(Offer)
+        ══════════════════════════════════ */
+        .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .trust-card{background:var(--navy-mid);border-radius:var(--radius);padding:32px 24px;border:1px solid rgba(255,255,255,.04);transition:all .3s ease}
+        .trust-card:hover{border-color:rgba(212,168,56,.18);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+        .trust-ico{width:50px;height:50px;background:rgba(212,168,56,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:1.1rem;color:var(--gold-light)}
+        .trust-card h3{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px}
+        .trust-card p{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.8}
+        @media(max-width:768px){.trust-grid{grid-template-columns:1fr}}
+
+        /* ══════════════════════════════════
+           후기 — 사회적 증거
+        ══════════════════════════════════ */
+        .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .rv-card{background:var(--white);padding:30px 26px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s ease}
+        .rv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+        .rv-stars{color:var(--gold);font-size:.8rem;margin-bottom:16px;letter-spacing:1px}
+        .rv-text{font-size:.89rem;color:var(--text);line-height:1.9;margin-bottom:20px}
+        .rv-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--cream-mid)}
+        .rv-av{width:40px;height:40px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold-light);font-size:.85rem}
+        .rv-info h4{font-size:.82rem;font-weight:600;color:var(--navy)}
+        .rv-info p{font-size:.72rem;color:var(--text-muted)}
+        @media(max-width:768px){.rv-grid{grid-template-columns:1fr}}
+
+        /* ══════════════════════════════════
+           주문안내 — N(Narrow)
+        ══════════════════════════════════ */
+        .order{background:var(--navy);padding:68px 0}
+        .order-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .order-card{background:var(--navy-mid);border-radius:var(--radius);padding:26px 18px;text-align:center;border:1px solid rgba(255,255,255,.04)}
+        .order-ico{width:44px;height:44px;background:rgba(212,168,56,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1rem;color:var(--gold-light)}
+        .order-lbl{font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:6px;letter-spacing:.3px}
+        .order-val{font-size:.86rem;font-weight:600;color:var(--white);line-height:1.55}
+        .order-val strong{color:var(--gold-light)}
+        @media(max-width:960px){.order-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:480px){.order-grid{grid-template-columns:1fr}}
+
+        /* ══════════════════════════════════
+           FAQ — N 잔여 의문
+        ══════════════════════════════════ */
+        .faq-list{max-width:720px;margin:0 auto}
+        .faq-item{background:var(--white);border-radius:10px;margin-bottom:10px;border:1px solid var(--border);overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
+        .faq-item.active{border-color:rgba(212,168,56,.28);box-shadow:0 2px 14px rgba(212,168,56,.06)}
+        .faq-q{width:100%;padding:19px 24px;display:flex;align-items:center;justify-content:space-between;font-size:.91rem;font-weight:500;color:var(--navy);background:transparent;border:none;cursor:pointer;text-align:left;font-family:var(--font-sans);transition:color .2s ease}
+        .faq-q:hover{color:var(--gold-dark)}
+        .faq-q i{color:var(--gold);transition:transform .3s ease;font-size:.78rem}
+        .faq-item.active .faq-q i{transform:rotate(180deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .faq-item.active .faq-a{max-height:300px}
+        .faq-a-inner{padding:0 24px 20px}
+        .faq-a p{font-size:.85rem;color:var(--text-muted);line-height:1.9}
+
+        /* ══════════════════════════════════
+           CTA — A(Action)
+        ══════════════════════════════════ */
+        .cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:90px 0;text-align:center;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-50%;right:-30%;width:80%;height:180%;background:radial-gradient(ellipse,rgba(212,168,56,.05) 0%,transparent 65%);pointer-events:none}
+        .cta h2{font-family:var(--font-serif);font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:700;color:var(--white);margin-bottom:16px;position:relative;z-index:2}
+        .cta h2 .hl{color:var(--gold-light)}
+        .cta-desc{font-size:.91rem;color:rgba(255,255,255,.65);margin-bottom:32px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative;z-index:2}
+        .btn-gold{background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--white);padding:16px 40px;font-size:.92rem;box-shadow:0 4px 18px rgba(212,168,56,.28);position:relative;z-index:2}
+        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,168,56,.38)}
+        .cta-sub{font-size:.76rem;color:rgba(255,255,255,.45);margin-top:16px;position:relative;z-index:2}
+
+        /* ══════════════════════════════════
+           푸터
+        ══════════════════════════════════ */
+        .footer{background:var(--navy);padding:52px 0 28px;border-top:1px solid rgba(255,255,255,.06)}
+        .ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.06)}
+        .ft-brand{display:flex;flex-direction:column;gap:14px}
+        .ft-logo{height:56px;width:auto;filter:brightness(10)}
+        .ft-brand p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.75}
+        .ft-links h4{font-size:.78rem;font-weight:600;color:var(--gold-light);margin-bottom:18px;letter-spacing:.3px}
+        .ft-links ul{display:flex;flex-direction:column;gap:10px}
+        .ft-links a,.ft-links li{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .2s ease}
+        .ft-links a:hover{color:var(--white)}
+        .ft-bottom{padding-top:28px;text-align:center}
+        .ft-bottom p{font-size:.72rem;color:rgba(255,255,255,.3)}
+        @media(max-width:768px){.ft-top{grid-template-columns:1fr;gap:28px}}
+
+        /* ══════════════════════════════════
+           플로팅 CTA
+        ══════════════════════════════════ */
+        .float-cta{position:fixed;bottom:28px;right:28px;z-index:999;opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+        .float-cta.visible{opacity:1;transform:translateY(0)}
+        .float-btn{display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--white);padding:14px 24px;border-radius:50px;font-size:.84rem;font-weight:600;border:none;cursor:pointer;box-shadow:0 6px 22px rgba(212,168,56,.32);transition:all .25s ease;font-family:var(--font-sans)}
+        .float-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,168,56,.42)}
+        @media(max-width:768px){.float-cta{bottom:22px;right:22px}.float-btn{padding:12px 20px;font-size:.8rem}}
+
+        /* ══════════════════════════════════
+           GSAP 애니메이션 초기 상태
+        ══════════════════════════════════ */
+        .fade-up{opacity:0;transform:translateY(24px)}
+        .fade-in{opacity:0}
+    </style>
+</head>
+<body>
+    <div class="scroll-bar" id="scrollBar"></div>
+
+    <!-- ── 헤더 ── -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo-link">
+                    <img src="images/logo.png" alt="광일푸드 로고">
+                </a>
+                <div class="header-right">
+                    <span class="header-badge"><i class="fas fa-shield-alt"></i> HACCP 인증</span>
+                    <a href="https://smartstore.naver.com/hakakorea7" target="_blank" rel="noopener" class="header-cta">
+                        <i class="fas fa-store"></i> 스토어 바로가기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════
+         P(Problem): 고객의 고민 환기
+    ════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="hero-badge fade-up"><i class="fas fa-award"></i> 국산 식자재 최저가 해썹업체</div>
+                    <h1 class="hero-title fade-up">
+                        좋은 멸치 고르기,<br>
+                        <span class="hl">왜 이렇게 어려울까요?</span>
+                    </h1>
+                    <p class="hero-desc fade-up">
+                        마트 멸치는 소포장인데 가격은 부담스럽고,<br>
+                        막상 육수를 내면 비린내가 올라오거나 맛이 밋밋합니다.<br>
+                        <strong>HACCP 인증, 식자재용 1.5kg 국내산 국물멸치</strong>로<br>
+                        그 고민을 끝내드립니다.
+                    </p>
+                    <div class="hero-tag fade-up"><i class="fas fa-truck"></i> 산지 직송 · 국내산 100% · HACCP 인증</div>
+                    <div class="hero-cta-row fade-up">
+                        <a href="https://smartstore.naver.com/hakakorea7" target="_blank" rel="noopener" class="btn btn-navy"><i class="fas fa-shopping-cart"></i> 스마트스토어에서 구매</a>
+                        <a href="#product" class="btn btn-outline"><i class="fas fa-box-open"></i> 상품 구성 보기</a>
+                    </div>
+                    <p class="hero-note fade-up"><i class="fas fa-phone-alt"></i> 대량 · 도매 상담: 010-4472-9788</p>
+                </div>
+                <div class="hero-visual fade-up">
+                    <div class="hero-card">
+                        <img src="images/logo.png" alt="광일푸드" class="hero-card-logo">
+                        <div class="hc-badge"><i class="fas fa-fire"></i> 대표 상품</div>
+                        <div class="hc-name">코오푸드 국물멸치 육수용 다시멸치</div>
+                        <div class="hc-sub">식자재용 1.5kg · 국내산</div>
+                        <div class="hc-specs">
+                            <div class="hc-spec"><i class="fas fa-check"></i> 국내산 100% 국물멸치</div>
+                            <div class="hc-spec"><i class="fas fa-check"></i> 1.5kg 대용량 식자재 규격</div>
+                            <div class="hc-spec"><i class="fas fa-check"></i> 냉동보관 · 유효기간 1년</div>
+                            <div class="hc-spec"><i class="fas fa-check"></i> 국 · 찌개 · 조림 육수용</div>
+                        </div>
+                        <hr class="hc-divider">
+                        <div class="hc-price">
+                            <div class="hc-price-old">정가 14,900원</div>
+                            <div class="hc-price-now">11,900<span>원</span></div>
+                            <div class="hc-price-note">프로모션 적용 시 최대 10,480원</div>
+                        </div>
+                        <div class="hc-haccp"><i class="fas fa-shield-alt"></i> HACCP 인증 · 식품안전관리인증</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         P→A 전환: 가격 앵커링 (닻 내림 효과)
+    ════════════════════════════════════════ -->
+    <section class="anchor">
+        <div class="container">
+            <div class="anchor-inner">
+                <div class="anchor-top fade-up">
+                    <h2>마트에서 사던 멸치,<br><span class="hl">얼마나 비싸게 사고 계셨나요?</span></h2>
+                    <p>같은 국내산 멸치입니다. 유통 구조가 다를 뿐.<br>왕도매 직접 공급이면, 중간 마진이 사라집니다.</p>
+                </div>
+                <div class="cmp">
+                    <div class="cmp-box fade-up">
+                        <div class="cmp-label">마트 소포장 기준</div>
+                        <div class="cmp-items">
+                            <div class="cmp-item"><span>국물멸치 300g</span><span>약 8,000원</span></div>
+                            <div class="cmp-item"><span>1.5kg 환산 시</span><span>약 40,000원</span></div>
+                        </div>
+                        <div class="cmp-total">
+                            <div class="cmp-total-label">1.5kg 환산가</div>
+                            <div class="cmp-total-value">~40,000<span>원</span></div>
+                        </div>
+                    </div>
+                    <div class="cmp-arrow fade-in"><i class="fas fa-arrow-right"></i></div>
+                    <div class="cmp-box ours fade-up">
+                        <div class="cmp-label">광일푸드 왕도매가</div>
+                        <div class="cmp-items">
+                            <div class="cmp-item"><span>국물멸치 1.5kg</span><span>1팩 기준</span></div>
+                            <div class="cmp-item"><span>국내산 · HACCP</span><span>동일 품질</span></div>
+                        </div>
+                        <div class="cmp-total">
+                            <div class="cmp-total-label">왕도매 가격</div>
+                            <div class="cmp-total-value">11,900<span>원</span></div>
+                        </div>
+                        <div class="cmp-note">프로모션 시 최대 10,480원</div>
+                    </div>
+                </div>
+                <div class="anchor-bottom fade-up">
+                    <div class="anchor-bottom-badge"><i class="fas fa-piggy-bank"></i> 왕도매 가격 구조</div>
+                    <p>유통 단계를 줄이면 가격이 달라집니다.<br><strong>같은 국내산 멸치, 최대 70% 이상 절감.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         A(Affinity): 공감 메시지
+    ════════════════════════════════════════ -->
+    <section class="empathy">
+        <div class="container">
+            <div class="empathy-box fade-up">
+                <h3><i class="fas fa-comment-dots"></i> 이런 고민, 한 번쯤 하셨을 겁니다</h3>
+                <div class="emp-list">
+                    <div class="emp-item fade-up"><i class="fas fa-circle"></i> "마트 멸치, 소포장인데 왜 이렇게 비싼 거죠?"</div>
+                    <div class="emp-item fade-up"><i class="fas fa-circle"></i> "정성껏 육수를 내도 비린내가 올라와서 결국 다시 사야 해요."</div>
+                    <div class="emp-item fade-up"><i class="fas fa-circle"></i> "식당에서 쓸 만큼 넉넉하게 사고 싶은데, 믿을 곳을 모르겠어요."</div>
+                    <div class="emp-item fade-up"><i class="fas fa-circle"></i> "가족 건강 생각하면 국내산이어야 하는데, 가격이 부담됩니다."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         S(Solution): 상품 상세 + USP
+    ════════════════════════════════════════ -->
+    <section class="sec sec-cream" id="product">
+        <div class="container">
+            <div class="sec-hd fade-up">
+                <span class="sec-tag"><i class="fas fa-box-open"></i> 상품 구성</span>
+                <h2 class="sec-title">대한민국 육수의 기준,<br><span class="hl">광일푸드 왕도매 멸치</span></h2>
+                <p class="sec-desc">좋은 식재료가 맛의 전부라는 믿음으로<br>품질 좋은 건어물을 합리적 가격에 공급합니다</p>
+            </div>
+
+            <div class="prod-main fade-up">
+                <span class="prod-badge"><i class="fas fa-medal"></i> 대표 상품</span>
+                <div class="prod-top">
+                    <div class="prod-cat">HACCP 인증 · 왕도매 건어물</div>
+                    <div class="prod-name">코오푸드 국물멸치 육수용 다시멸치</div>
+                    <div class="prod-sub">식자재용 1.5kg · 국내산</div>
+                </div>
+                <div class="prod-specs">
+                    <div class="prod-spec"><i class="fas fa-fish"></i> <strong>국내산 100%</strong> 국물멸치 (원산지: 국산)</div>
+                    <div class="prod-spec"><i class="fas fa-weight-hanging"></i> <strong>1.5kg 대용량</strong> 식자재 규격 — 가정 · 식당 모두 적합</div>
+                    <div class="prod-spec"><i class="fas fa-snowflake"></i> <strong>냉동 보관</strong> · 유효기간 약 1년</div>
+                    <div class="prod-spec"><i class="fas fa-utensils"></i> 국 · 찌개 · 조림 · 볶음 등 <strong>다용도 육수 베이스</strong></div>
+                    <div class="prod-spec"><i class="fas fa-boxes-stacked"></i> 최대 <strong>50개까지 한 번에 주문</strong> 가능 (대량 구매)</div>
+                </div>
+                <div class="prod-price">
+                    <div class="prod-price-old">정가 14,900원</div>
+                    <div class="prod-price-now">11,900<span>원</span></div>
+                    <div class="prod-price-note">프로모션 · 쿠폰 적용 시 최대 10,480원까지 할인</div>
+                </div>
+                <div class="prod-haccp"><i class="fas fa-shield-alt"></i> HACCP 식품안전관리인증 취득</div>
+            </div>
+
+            <div class="usp-wrap fade-up">
+                <h3 class="usp-title">육수 맛이 달라지는 <span class="hl">세 가지 이유</span></h3>
+                <div class="usp-grid">
+                    <div class="usp-card">
+                        <div class="usp-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h4>철저한 선별 공정</h4>
+                        <p>크기와 신선도 기준으로 선별합니다.<br><span class="at">쓴맛 · 비린내 없는 깔끔한 육수</span>의 시작입니다.</p>
+                    </div>
+                    <div class="usp-card">
+                        <div class="usp-icon"><i class="fas fa-temperature-low"></i></div>
+                        <h4>저온 유통 원칙</h4>
+                        <p>산지에서 고객까지<br><span class="at">냉동 보관 체계</span>를 유지합니다.</p>
+                    </div>
+                    <div class="usp-card">
+                        <div class="usp-icon"><i class="fas fa-won-sign"></i></div>
+                        <h4>왕도매 가격 구조</h4>
+                        <p>중간 유통을 줄인 <span class="at">도매 직접 공급</span>.<br>마트 대비 압도적 단가 절감.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         숫자로 보는 광일푸드
+    ════════════════════════════════════════ -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-up">
+                    <div class="stat-num"><span class="counter" data-target="1.5">0</span><span class="stat-unit">kg</span></div>
+                    <div class="stat-label">식자재용 대용량 규격</div>
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="stat-num"><span class="counter" data-target="100">0</span><span class="stat-unit">건+</span></div>
+                    <div class="stat-label">월간 판매량</div>
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="stat-num"><span class="counter" data-target="4.3">0</span><span class="stat-unit">점</span></div>
+                    <div class="stat-label">고객 평점</div>
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="stat-num"><span class="counter" data-target="70">0</span><span class="stat-unit">%↓</span></div>
+                    <div class="stat-label">마트 대비 절감</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         O(Offer): 신뢰 구조
+    ════════════════════════════════════════ -->
+    <section class="sec sec-dark">
+        <div class="container">
+            <div class="sec-hd fade-up">
+                <span class="sec-tag"><i class="fas fa-shield-alt"></i> 신뢰 구조</span>
+                <h2 class="sec-title">왜 <span class="hl">광일푸드</span>를 선택하는가</h2>
+                <p class="sec-desc">전국을 발로 뛰며 찾아낸 건어물을<br>합리적 가격에 안전하게 공급합니다</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card fade-up">
+                    <div class="trust-ico"><i class="fas fa-warehouse"></i></div>
+                    <h3>왕도매 전문 공급</h3>
+                    <p>일반 소매가 아닌 식자재용 도매 규격으로 공급합니다. 가정은 물론 식당 · 반찬가게에서도 사용하는 품질입니다.</p>
+                </div>
+                <div class="trust-card fade-up">
+                    <div class="trust-ico"><i class="fas fa-certificate"></i></div>
+                    <h3>HACCP 인증 업체</h3>
+                    <p>식품안전관리인증(HACCP)을 취득한 위생 관리 기준. 안심하고 구매하실 수 있는 식자재입니다.</p>
+                </div>
+                <div class="trust-card fade-up">
+                    <div class="trust-ico"><i class="fas fa-headset"></i></div>
+                    <h3>직접 소통 · 빠른 대응</h3>
+                    <p>대량 주문이나 식자재 상담이 필요하시면 전화(010-4472-9788)로 직접 소통할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         O 사회적 증거: 후기
+    ════════════════════════════════════════ -->
+    <section class="sec sec-cream">
+        <div class="container">
+            <div class="sec-hd fade-up">
+                <span class="sec-tag"><i class="fas fa-star"></i> 고객 후기</span>
+                <h2 class="sec-title">재구매하는 <span class="hl">이유</span>가 있습니다</h2>
+                <p class="sec-desc">G마켓 평점 4.3점 · 월 100건 이상 판매</p>
+            </div>
+            <div class="rv-grid">
+                <div class="rv-card fade-up">
+                    <div class="rv-stars">★★★★★</div>
+                    <p class="rv-text">"마트에서 소포장 사다가 가격 비교해보고 깜짝 놀랐어요. 같은 국내산인데 이 양에 이 가격이면 안 살 이유가 없습니다. 육수 맛도 깔끔하고요."</p>
+                    <div class="rv-author"><div class="rv-av">김</div><div class="rv-info"><h4>김○○</h4><p>가정주부 · 재구매 고객</p></div></div>
+                </div>
+                <div class="rv-card fade-up">
+                    <div class="rv-stars">★★★★★</div>
+                    <p class="rv-text">"반찬가게 운영하면서 매달 주문합니다. 대용량이라 한 번 사면 오래 쓸 수 있고, 멸치 상태도 일정해서 육수 맛이 늘 균일해요."</p>
+                    <div class="rv-author"><div class="rv-av">이</div><div class="rv-info"><h4>이○○</h4><p>반찬가게 운영 · 정기 주문</p></div></div>
+                </div>
+                <div class="rv-card fade-up">
+                    <div class="rv-stars">★★★★★</div>
+                    <p class="rv-text">"국 끓일 때마다 육수팩 쓰다가, 직접 멸치 우려보니 맛이 확실히 다릅니다. 비린내 없이 깊은 맛이 나서 가족들이 국물부터 먹어요."</p>
+                    <div class="rv-author"><div class="rv-av">박</div><div class="rv-info"><h4>박○○</h4><p>3인 가정 · 첫 구매 후 재주문</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         N(Narrow Down): 주문 핵심 정보
+    ════════════════════════════════════════ -->
+    <section class="order">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:36px" class="fade-up">
+                <span class="sec-tag" style="background:rgba(212,168,56,.12);color:var(--gold-light);border-color:rgba(212,168,56,.2)"><i class="fas fa-clipboard-check"></i> 주문 안내</span>
+                <h2 style="font-family:var(--font-serif);font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:700;color:var(--white);margin-top:14px">구매 전 <span style="color:var(--gold-light)">확인하세요</span></h2>
+            </div>
+            <div class="order-grid">
+                <div class="order-card fade-up">
+                    <div class="order-ico"><i class="fas fa-box"></i></div>
+                    <div class="order-lbl">상품 규격</div>
+                    <div class="order-val"><strong>1.5kg</strong> 식자재용</div>
+                </div>
+                <div class="order-card fade-up">
+                    <div class="order-ico"><i class="fas fa-truck"></i></div>
+                    <div class="order-lbl">배송</div>
+                    <div class="order-val">쿠팡 <strong>무료배송</strong><br>G마켓 3만원↑ 무료</div>
+                </div>
+                <div class="order-card fade-up">
+                    <div class="order-ico"><i class="fas fa-snowflake"></i></div>
+                    <div class="order-lbl">보관 방법</div>
+                    <div class="order-val"><strong>냉동 보관</strong><br>유효기간 약 1년</div>
+                </div>
+                <div class="order-card fade-up">
+                    <div class="order-ico"><i class="fas fa-phone-alt"></i></div>
+                    <div class="order-lbl">대량 주문 상담</div>
+                    <div class="order-val"><strong>010-4472-9788</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         N: FAQ
+    ════════════════════════════════════════ -->
+    <section class="sec sec-white">
+        <div class="container">
+            <div class="sec-hd fade-up">
+                <span class="sec-tag"><i class="fas fa-question-circle"></i> FAQ</span>
+                <h2 class="sec-title">자주 묻는 질문</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <button class="faq-q"><span>마트 멸치랑 품질 차이가 있나요?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a"><div class="faq-a-inner"><p>동일한 국내산 국물멸치입니다. 차이는 유통 구조에 있습니다. 마트는 소포장·중간 유통을 거쳐 가격이 올라가고, 광일푸드는 도매 직접 공급으로 중간 마진을 줄여 합리적 가격에 제공합니다.</p></div></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-q"><span>HACCP 인증이 뭔가요?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a"><div class="faq-a-inner"><p>HACCP(식품안전관리인증)은 식품의 원료·제조·가공·유통 전 과정에서 위해 요소를 분석하고 중요 관리점을 관리하는 국가 인증 제도입니다. 광일푸드는 이 인증을 취득한 안전한 식자재 업체입니다.</p></div></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-q"><span>보관은 어떻게 하나요?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a"><div class="faq-a-inner"><p>냉동 보관을 권장합니다. 제조일로부터 약 1년간 보관 가능하며, 사용 시 필요한 만큼만 꺼내어 해동 후 사용하시면 됩니다.</p></div></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-q"><span>식당이나 반찬가게에서 대량 주문도 가능한가요?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a"><div class="faq-a-inner"><p>네, 가능합니다. 온라인에서 최대 50개까지 한 번에 주문하실 수 있으며, 그 이상은 전화(010-4472-9788)로 별도 상담 가능합니다.</p></div></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-q"><span>교환이나 환불은 어떻게 되나요?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-a"><div class="faq-a-inner"><p>상품에 문제가 있는 경우 고객센터를 통해 교환·환불이 가능합니다. 수산물 특성상 단순 변심에 의한 반품은 어려울 수 있으니, 수령 시 상태를 확인해주세요.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         A(Action): 최종 CTA
+    ════════════════════════════════════════ -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2 class="fade-up">맛있는 육수의 시작,<br><span class="hl">좋은 멸치를 고르는 것부터입니다</span></h2>
+            <p class="cta-desc fade-up">HACCP 인증, 식자재용 1.5kg 국내산 국물멸치<br>왕도매 가격으로 만나보세요</p>
+            <a href="https://smartstore.naver.com/hakakorea7" target="_blank" rel="noopener" class="btn btn-gold fade-up"><i class="fas fa-shopping-cart"></i> 스마트스토어에서 구매하기</a>
+            <p class="cta-sub fade-up">대량 주문 · 식자재 도매 상담: 010-4472-9788</p>
+        </div>
+    </section>
+
+    <!-- ── 푸터 ── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="ft-top">
+                <div class="ft-brand">
+                    <img src="images/logo.png" alt="광일푸드" class="ft-logo">
+                    <p>산지 직송의 신선함을 담은<br>대한민국 육수의 기준, 왕도매 멸치.<br>국산 식자재 최저가 해썹업체.</p>
+                </div>
+                <div class="ft-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#product">상품 구성</a></li>
+                        <li><a href="#contact">구매하기</a></li>
+                        <li><a href="https://smartstore.naver.com/hakakorea7" target="_blank" rel="noopener">스마트스토어</a></li>
+                    </ul>
+                </div>
+                <div class="ft-links">
+                    <h4>고객 상담</h4>
+                    <ul>
+                        <li>전화: 010-4472-9788</li>
+                        <li>이메일: light1333@naver.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft-bottom">
+                <p>© 2026 광일푸드. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 플로팅 CTA -->
+    <div class="float-cta" id="floatCta">
+        <a href="https://smartstore.naver.com/hakakorea7" target="_blank" rel="noopener" class="float-btn">
+            <i class="fas fa-shopping-cart"></i><span>구매하기</span>
+        </a>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+    (function(){
+        'use strict';
+
+        /* ── 스크롤 프로그레스 바 ── */
+        var bar = document.getElementById('scrollBar');
+        var floatCta = document.getElementById('floatCta');
+
+        function onScroll(){
+            var t = window.scrollY;
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            if(h > 0) bar.style.width = (t / h) * 100 + '%';
+
+            /* 헤더 스크롤 */
+            document.getElementById('header').classList.toggle('scrolled', t > 50);
+
+            /* 플로팅 CTA: 히어로 아래부터 표시 */
+            floatCta.classList.toggle('visible', t > 400);
+        }
+        window.addEventListener('scroll', onScroll, {passive: true});
+        onScroll();
+
+        /* ── FAQ 아코디언 ── */
+        document.querySelectorAll('.faq-item').forEach(function(item){
+            item.querySelector('.faq-q').addEventListener('click', function(){
+                var open = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('active'); });
+                if(!open) item.classList.add('active');
+            });
+        });
+
+        /* ── 스무스 스크롤 ── */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a){
+            a.addEventListener('click', function(e){
+                var href = this.getAttribute('href');
+                if(href === '#') return;
+                e.preventDefault();
+                var el = document.querySelector(href);
+                if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+            });
+        });
+
+        /* ── 카운터 애니메이션 ── */
+        function animateCounters(){
+            document.querySelectorAll('.counter').forEach(function(el){
+                if(el.dataset.animated) return;
+                var target = parseFloat(el.dataset.target);
+                var isDecimal = target % 1 !== 0;
+                var duration = 1200;
+                var start = performance.now();
+                el.dataset.animated = 'true';
+
+                function tick(now){
+                    var elapsed = now - start;
+                    var progress = Math.min(elapsed / duration, 1);
+                    /* easeOutCubic */
+                    var ease = 1 - Math.pow(1 - progress, 3);
+                    var current = target * ease;
+                    el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+                    if(progress < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            });
+        }
+
+        /* ── GSAP 애니메이션 ── */
+        try {
+            if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
+                gsap.registerPlugin(ScrollTrigger);
+
+                /* fade-up 요소: stagger 지원 */
+                var sections = document.querySelectorAll('section, .anchor, .empathy, footer');
+                sections.forEach(function(section){
+                    var els = section.querySelectorAll('.fade-up');
+                    if(els.length === 0) return;
+
+                    els.forEach(function(el, i){
+                        gsap.fromTo(el,
+                            { opacity: 0, y: 24 },
+                            {
+                                opacity: 1, y: 0,
+                                duration: 0.6,
+                                delay: i * 0.08,
+                                ease: 'power2.out',
+                                scrollTrigger: {
+                                    trigger: el,
+                                    start: 'top 85%',
+                                    once: true
+                                }
+                            }
+                        );
+                    });
+                });
+
+                /* fade-in 요소 */
+                document.querySelectorAll('.fade-in').forEach(function(el){
+                    gsap.fromTo(el,
+                        { opacity: 0 },
+                        {
+                            opacity: 1,
+                            duration: 0.5,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 85%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                /* 카운터 — ScrollTrigger로 뷰포트 진입 시 실행 */
+                var statsSection = document.querySelector('.stats');
+                if(statsSection){
+                    ScrollTrigger.create({
+                        trigger: statsSection,
+                        start: 'top 80%',
+                        once: true,
+                        onEnter: animateCounters
+                    });
+                }
+
+            } else {
+                throw new Error('GSAP not loaded');
+            }
+        } catch(e) {
+            /* GSAP 폴백: 모든 애니메이션 요소를 즉시 표시 */
+            document.querySelectorAll('.fade-up, .fade-in').forEach(function(el){
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+            /* 카운터도 즉시 최종 값 표시 */
+            document.querySelectorAll('.counter').forEach(function(el){
+                el.textContent = el.dataset.target;
+            });
+            /* 플로팅 CTA도 표시 */
+            floatCta.classList.add('visible');
+        }
+    })();
+    </script>
+</body>
+</html>
